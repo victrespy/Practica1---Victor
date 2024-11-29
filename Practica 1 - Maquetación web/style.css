@@ -1,0 +1,731 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+body{
+    font-size: 20px;
+    color:whitesmoke;
+    background-color: rgb(27, 27, 27);
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+img{
+    max-width: 100%;
+}
+p{
+    margin: 5px;
+}
+span{
+    color: rgb(87, 226, 219);
+}
+header{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    position: sticky; 
+    top: 0;
+    z-index: 99; /*le da un valor en la profundidad elevado para que se muestre siempre por encima*/
+}
+#Logo{
+    width: 20%;
+}
+nav{
+    width: 40%;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-size: 1.5rem;
+    font-family: "Metamorphous", serif;
+}
+header li:hover{
+    text-decoration: underline;
+}
+main{
+    background-color: rgb(27, 27, 27);
+}
+h1{
+    font-family: "Metamorphous", serif;
+    font-size: 90px;
+    text-shadow: 2px 2px 11px rgb(44, 43, 43);
+}
+h2{
+    font-family: "Metamorphous", serif;
+}
+section#intro{
+    height: 90vh;
+    background: url('./imgs/fondo2copia.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section#intro div{
+    width: 50%;
+    text-align: center;
+}
+
+/* slider---------------------- */
+
+.container{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    padding-top: 3%;
+}
+.slider input{
+    visibility: hidden;
+    display: none;
+}
+.buttons{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 50px;
+    gap: 10px;
+}
+.buttons label{
+    width: 20px;
+    height: 20px;
+    background-color: whitesmoke;
+    border-radius: 10%;
+    opacity: 0.5;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+}
+.buttons label:hover{
+    scale: 1.2;
+    opacity: 1;
+}
+.slider input:nth-child(1):checked ~ .buttons label:nth-child(1),
+.slider input:nth-child(2):checked ~ .buttons label:nth-child(2),
+.slider input:nth-child(3):checked ~ .buttons label:nth-child(3),
+.slider input:nth-child(4):checked ~ .buttons label:nth-child(4),
+.slider input:nth-child(5):checked ~ .buttons label:nth-child(5),
+.slider input:nth-child(6):checked ~ .buttons label:nth-child(6){
+    opacity: 1;
+    scroll-margin: 1.2;
+    width: 40px;
+}
+.content{
+    position: relative;
+    width: 600vw;
+    display: flex;
+    transition: 0.4s ease-in-out;
+}
+.firstslide, .secondslide, .thirdslide, .fourthslide, .fifthslide, .sixthslide{
+    position: relative;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.slider input:nth-child(1):checked ~ .content{
+    left: 0;
+}
+.slider input:nth-child(2):checked ~ .content{
+    left: -100vw;
+}
+.slider input:nth-child(3):checked ~ .content{
+    left: -200vw;
+}
+.slider input:nth-child(4):checked ~ .content{
+    left: -300vw;
+}
+.slider input:nth-child(5):checked ~ .content{
+    left: -400vw;
+}
+.slider input:nth-child(6):checked ~ .content{
+    left: -500vw;
+}
+
+/* slider---------------------- */
+
+.firstslide>div, .fourthslide>div{
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+.secondslide>div, .thirdslide>div, .sixthslide>div{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+.fifthslide>div{
+    width: 60%;
+    margin: auto;
+    padding-top: 30px;
+}
+.firstslide>div>div:nth-child(1){
+    width: 60%;
+}
+.firstslide>div>div:nth-child(2){
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+.secondslide>div>div:nth-child(2){
+    width: 60%;
+}
+.secondslide>div>div:nth-child(1){
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+.thirdslide>div>div:nth-child(1){
+    width: 60%;
+}
+.thirdslide>div>div:nth-child(2){
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+.fourthslide>div>div:nth-child(2){
+    width: 50%;
+}
+.fourthslide>div>div:nth-child(1){
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+.sixthslide>div>div:nth-child(1){
+    width: 70%;
+}
+.sixthslide>div>div:nth-child(2){
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+#EasterEgg{
+    color: transparent;
+}
+#noticias{
+    text-align: center;
+    padding: 10vh 0;
+    background: url(./imgs/fondo\ libros.jpg);
+    background-size: cover;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10%;
+    border-radius: 20px;
+}
+#noticias>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+}
+.news{
+    width: 30%;
+    margin: 5%;
+    padding: 1%;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s; /* para que la animación sea smooth */
+
+}
+.news:hover {
+    transform: scale(1.2); /* animacion que reescala al pasar el raton */
+}
+
+
+
+/*PAGINA LIBROS*/
+
+#principales{
+    height: 86vh;
+    padding-bottom: 5%;
+    background: url(./imgs/libros/libros\ fondo.JPG);
+    background-size: cover;
+    margin: 1% 0;
+}
+#obertura{
+    padding-bottom: 5%;
+    background: url(./imgs/libros/obertura\ fondo.jpg);
+    background-size: cover;
+    margin: 1% 0;
+}
+#especiales{
+    padding-bottom: 5%;
+    background: url(./imgs/Mundos/El\ sueño.jpg);
+    background-size: cover;
+    margin: 1% 0;
+}
+#principales article, #obertura article, #especiales article{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-top: 2%;
+}
+#principales h2, #obertura h2, #especiales h2{
+    margin-bottom: 2%;
+}
+#principales>div{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+}
+#principales>div>div{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 1;
+    transition: 0.7s ease;
+    border-radius: 12px;
+    margin: 1%;
+}
+#principales img{
+    border-radius: 10px;
+}
+#principales>div>div:hover{
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+    transform: scale(0.9);
+}
+#principales>div>div:hover img{
+    border-radius: 20px;
+}
+.titulo{
+    opacity: 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    transition: opacity 0.7s;
+}
+#principales>div>div:hover .titulo{
+    opacity: 1;
+}
+#obertura>div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+#obertura>div>div{
+    width: 13%;
+    margin: 2% 7%;
+    text-align: center;
+}
+#obertura img{
+    border-radius: 10px;
+}
+#especiales>div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+#especiales>div>div{
+    width: 13%;
+    margin: 2% 7%;
+    text-align: center;
+}
+#especiales img{
+    border-radius: 10px;
+}
+#obertura h3, #especiales h3{
+    height: 50px;
+}
+
+
+
+/*PAGINA DE PERSONAJES*/
+
+
+#personajes{
+    text-align: center;
+    padding-top: 4%;
+}
+.char{
+    padding: 5%;
+}
+.char>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2%;
+}
+.char>div>div{
+    width: 20%;
+    margin: 1%;
+    text-align: center;
+    position: relative;
+}
+.char>div>div img{
+    transition: opacity 0.3s;
+    transition: transform 0.3s;
+    border-radius: 10px;
+}
+.char>div>div:hover img{
+    opacity: 0.3;
+    transform: scale(0.9);
+}
+.nombre{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    transition: opacity 0.3s;
+
+}
+.char>div>div:hover .nombre{
+    opacity: 1;
+}
+
+/*MUNDOS*/
+
+#sueño{
+    background: url(./imgs/Mundos/El\ sueño2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: auto;
+    margin-bottom: 10%;
+    height: 90vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#wake{
+    background: url(./imgs/Mundos/el\ mundo\ despierto.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: auto;
+    margin-bottom: 10%;
+    height: 90vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#infierno{
+    background: url(./imgs/Mundos/infierno.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: auto;
+    margin-bottom: 10%;
+    height: 90vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#inframundo{
+    background: url(./imgs/Mundos/inframundo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: auto;
+    margin-bottom: 10%;
+    height: 90vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#sueño>div, #wake>div, #infierno>div, #inframundo>div{
+    width: 30%;
+    text-align: center;
+    margin: 10% 5%;
+    font-size: 1.5rem;
+}
+
+/*AUTOR*/
+
+#autor1{
+    display: flex;
+    padding: 5%;
+
+}
+#autor1 img{
+    border-radius: 10px;
+}
+#autor1 div:nth-child(2){
+    text-align: center;
+    padding: 5%;
+}
+#autor1 h2{
+    margin: 5%;
+    font-size: 60px;
+}
+
+#otros{
+    padding: 5% 0;
+    background-size: cover;
+    margin: 1% 0;
+    text-align: center;
+}
+#otros h2{
+    margin: 1%;
+}
+#otros h3{
+    height: 50px;
+}
+#otros>div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+#otros>div>div{
+    width: 13%;
+    margin: 2% 7%;
+    text-align: center;
+}
+#otros img{
+    border-radius: 10px;
+}
+
+/*ETERNOS*/
+
+#sueno, 
+#muerte,
+#deseo,
+#destino,
+#desesperacion,
+#destruccion,
+#delirio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10%;
+}
+#sueno div:nth-child(1), 
+#muerte div:nth-child(1),
+#deseo div:nth-child(1),
+#destino div:nth-child(1),
+#desesperacion div:nth-child(1),
+#destruccion div:nth-child(1),
+#delirio div:nth-child(1){
+    width: 25%;
+}
+#sueno div:nth-child(2), 
+#muerte div:nth-child(2),
+#deseo div:nth-child(2),
+#destino div:nth-child(2),
+#desesperacion div:nth-child(2),
+#destruccion div:nth-child(2),
+#delirio div:nth-child(2){
+    width: 60%;
+}
+#sueno h2, 
+#muerte h2,
+#deseo h2,
+#destino h2,
+#desesperacion h2,
+#destruccion h2,
+#delirio h2{
+    margin-bottom: 5%;
+}
+#sueno p, 
+#muerte p,
+#deseo p,
+#destino p,
+#desesperacion p,
+#destruccion p,
+#delirio p{
+    margin-bottom: 2%;
+}
+#sueno img,
+#muerte img,
+#deseo img,
+#destino img,
+#desesperacion img,
+#destruccion img,
+#delirio img{
+    border-radius: 10px;
+}
+
+/*FOOTER*/
+
+footer{
+    background: url('./imgs/footer.jpg');
+    background-size: cover;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+}
+footer>div{
+    width: 30%;
+    display: flex;
+    padding-left: 5%;
+}
+footer>div>div{
+    width: 20%;
+    margin: 2%;
+}
+footer>div>div>img{
+    border-radius: 60px;
+}
+
+/* EASTER EGG*/
+
+body#egg{
+    font-size: 20px;
+    color:whitesmoke;
+    background-color: rgb(27, 27, 27);
+    background:url(./EasterEgg/glow.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+#egg_header h1{
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+}
+header#egg_header{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    position: static;
+}
+header#egg_header>div{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-around;
+}
+header#egg_header>div>div{
+    width: 18%;
+}
+header#egg_header img{
+    border-radius: 15px;
+}
+#egg_main{
+    background-color: rgba(0, 0, 0, 0);
+}
+#egg_main section{
+    padding: 5%;
+}
+#egg_main h2{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 20%;
+    height: 7vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#egg_footer{
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+}
+.resumen{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+    margin: 10% 2%;
+    border-radius: 20px;
+    height: 15vh;
+}
+.resumen:nth-child(2){
+    background-color: rgba(115,156,175,255);
+}
+.resumen:nth-child(3){
+    background-color: rgba(245,170,38,255);
+}
+.resumen:nth-child(4){
+    background-color: rgba(245,113,43,255);
+}
+.resumen:nth-child(5){
+    background-color: rgba(133,49,15,255);
+}
+#logo div{
+    width: 40%;
+    margin: auto;
+    padding: 7%;
+}
+#grupo div{
+    width: 60%;
+    margin: auto;
+}
+#grupo img{
+    border-radius: 15px;
+}
+.enlace{
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    border: 3px solid whitesmoke;
+    border-radius: 10px;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.3s;
+}
+.enlace:hover{
+    background-color: rgba(245,170,38,255);
+    transform: scale(1.5);
+}
+
+/* CANCIONES */
+
+.contenedor{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    padding: 2% 0;
+    margin-top: 2%;
+}
+.contenedor div{
+    width: 40%;
+    padding: 2%;
+}
+.contenedor .color{
+    background-color: rgba(245,113,43,255);
+    border-radius: 15px;
+    width: 70%;
+    margin: auto;
+}
+.contenedor>div>p{
+    width: 80%;
+    margin: auto;
+    font-size: 1.5rem;
+    padding: 1%;
+}
